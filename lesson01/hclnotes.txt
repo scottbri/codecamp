@@ -1,0 +1,69 @@
+HCL to create an internal offer inside "Service Exchange" to allow for internal development teams to develop on the platform
+
+PKS for a month 
+how customers promote PCF internally
+
+Engineering and R&D Services
+$1.5B -> $2B
+Began as engineering company
+
+Prototype hardware and embedded software, and mechanics of physical integration
+Mechanical engineering and industrial design
+
+compilers and system ssoftware (OS's) through TurboTax
+Functional platforms
+- platform 
+    - discovery marketing platform for Pepsi, 
+    - ecomerce - consumption of product
+    - self service systems
+Global customer base, scalable, secure, extensible, analytics
+
+Also do support of the platforms above?
+examples
+   Symantic norton online platform .com
+   western union .com 
+   manchester united .com
+
+typically do this in on-prem customer datacenters
+in last 24 months, mostly on public cloud, AWS and Azure, microservices based and spring boot
+Cisco likes Go 
+Paypal and Tmobile have some mesos
+
+Service mesh based on istio
+
+polarized cloud agnostic vs. all in on particular cloud
+
+microfrontend @ boeing? 
+
+Cisco
+Pepsi
+Lego
+Nokia
+Talex
+Western union
+Wawa
+
+OEM hardware is moving to software on the cloud
+5G and telecom on the cloud
+Openstack as well as public cloud
+
+value prop:
+experience and body of work
+
+20 people trained PAL, and 12 more internal training
+50% influence on what platform to use to develop
+
+Maglev platform Cisco
+
+
+vinod
+haritha
+??
+vikosh existing apps
+craig
+- nav architect
+- vinit evangelist and architect (blockchain)
+- rajesh (haritha) modern ad practice accellerators and tooling for developers
+- manuel agile center of excellence SAFe 
+jocelyn
+alan
