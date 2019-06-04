@@ -25,6 +25,8 @@
 ## A bit of javascript
 * javascript console
 * variables, operators, expressions
+* focus on evaluating expressions of all kinds
+* show object properties and functions of basic data types
 * introduce the game we will create together
 
 # EOC
