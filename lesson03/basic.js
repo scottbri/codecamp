@@ -3,9 +3,9 @@ var myMessage = document.getElementById("scriptResult");
 
 var happyFace = document.getElementById("happy");
 var sadFace = document.getElementById("sad");
-//var angryFace = document.getElementById("angry");
-//var coolFace = document.getElementById("cool");
-//var surprisedFace = document.getElementById("surprised");
+var angryFace = document.getElementById("angry");
+var coolFace = document.getElementById("cool");
+var surprisedFace = document.getElementById("surprised");
 
 var answer = getName();
 var output = greeting(answer);
@@ -13,9 +13,9 @@ myMessage.innerHTML = output;
 
 happyFace.addEventListener('click', happyDo, false);
 sadFace.addEventListener('click', sadDo, false);
-//angryFace.addEventListener('click', angryDo, false);
-//coolFace.addEventListener('click', coolDo, false);
-//surprisedFace.addEventListener('click', surprisedDo, false);
+angryFace.addEventListener('click', angryDo, false);
+coolFace.addEventListener('click', coolDo, false);
+surprisedFace.addEventListener('click', surprisedDo, false);
 
 function getName() {
 	var name = window.prompt("What's your name? ");
@@ -57,6 +57,21 @@ function sadDo() {
 	console.log(answer + " is " + emotion);
 	iAmFeeling(emotion);
 }
+function angryDo() {
+	var emotion = "angry";
+	console.log(answer + " is " + emotion);
+	iAmFeeling(emotion);
+}
+function coolDo() {
+	var emotion = "cool";
+	console.log(answer + " is " + emotion);
+	iAmFeeling(emotion);
+}
+function surprisedDo() {
+	var emotion = "surprised";
+	console.log(answer + " is " + emotion);
+	iAmFeeling(emotion);
+}
 
 function iAmFeeling(feeling) {
 	var message = ""
@@ -72,10 +87,30 @@ function iAmFeeling(feeling) {
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
 	    break;
+	  case "angry":
+		message = "Eeek, " + answer;
+		message = message + "<br>" + "Everything will be ok.  Please forgive!";
+		output = output + "<br>" + message.bold();
+		myMessage.innerHTML = output;
+	    break;
+	  case "cool":
+				var phrase = window.prompt("What phrase do you want me to repeat? ");	
+				var number = window.prompt("How many times should I repeat that? ");	
+				output = "";
+				for (var i = 1; i < number; i++) {
+					output = output + "<br>" + phrase + " #" + i;
+				}
+			myMessage.innerHTML = output;
+	    break;
+	  case "surprised":
+			answer = getName();
+			output = greeting(answer);
+			myMessage.innerHTML = output;
+	    break;
 	  default:
 		message = "That's an interesting perspective.";
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
-        }
+  }
 }
 
