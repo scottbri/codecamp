@@ -1,6 +1,5 @@
 var myMessage = document.getElementById("scriptResult");
 
-
 var happyFace = document.getElementById("happy");
 var sadFace = document.getElementById("sad");
 var angryFace = document.getElementById("angry");
@@ -85,6 +84,7 @@ function iAmFeeling(event) {
 	var message = "";
 	var feeling = event.currentTarget.emotion;
 
+	output = "";
 	console.log(answer + " is " + feeling);
 
 	switch(feeling) {
@@ -121,22 +121,35 @@ function iAmFeeling(event) {
 	  break;
 	  case "math":	
 				var number = window.prompt("What number do you want me to factor? ");	
-				output = "";
-				var prime = true;
+				var startTime = performance.now();
+				var countFactors = 0;
+				var maxFactors = 0;
+				var numWithMostFactors = 0;
+
 				for (var i = 1; i <= number; i++) {
 					output = output + "<br>" + i + ":";
-					for (var j = 2 ; j<i; j++ ) {
+					for (var j = 1 ; j<=i; j++ ) {
 						if (i%j == 0) {
-							prime = false;
+							countFactors++;
 							output = output + " " + j;
 						}
 					}
-					if ( prime == true ) {
-						output = output + " prime";
+					if ( countFactors <= 2 ) {
+						output = output + " (prime)";
+					} else {
+						if ( countFactors > maxFactors ) {
+							maxFactors = countFactors;
+							numWithMostFactors = i;
+						}
+						output = output + " (" + countFactors + ")";
 					}
 					prime = true;
+					countFactors = 0;
 				}
-			myMessage.innerHTML = output;
+				var stopTime = performance.now();
+				var headerOutput = "Factored through " + number + " in " + (stopTime - startTime).toFixed(5) + "ms";
+				headerOutput = headerOutput + "<br>" + numWithMostFactors + " has " + maxFactors + " factors, which is the most (not counting 1 and the number)";
+			  myMessage.innerHTML = headerOutput + "<br>" + output;
 	    break;
 	  case "surprised":
 			answer = getName();
