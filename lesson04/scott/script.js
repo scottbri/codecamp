@@ -54,32 +54,6 @@ function greeting(name) {
 	return(message);
 }
 
-function happyDo() {
-	var emotion = "happy";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function sadDo() {
-	var emotion = "sad";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function angryDo() {
-	var emotion = "angry";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function coolDo() {
-	var emotion = "cool";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function surprisedDo() {
-	var emotion = "surprised";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-
 function iAmFeeling(event) {
 	var message = "";
 	var feeling = event.currentTarget.emotion;
@@ -122,6 +96,8 @@ function iAmFeeling(event) {
 	  case "math":	
 				var number = window.prompt("What number do you want me to factor? ");	
 				var startTime = performance.now();
+				var stopTime;
+				var headerOutput = "";
 				var countFactors = 0;
 				var maxFactors = 0;
 				var numWithMostFactors = 0;
@@ -143,12 +119,11 @@ function iAmFeeling(event) {
 						}
 						output = output + " (" + countFactors + ")";
 					}
-					prime = true;
 					countFactors = 0;
 				}
-				var stopTime = performance.now();
-				var headerOutput = "Factored through " + number + " in " + (stopTime - startTime).toFixed(5) + "ms";
-				headerOutput = headerOutput + "<br>" + numWithMostFactors + " has " + maxFactors + " factors, which is the most (not counting 1 and the number)";
+				stopTime = performance.now();
+				headerOutput = "Factored through " + number + " in " + (stopTime - startTime).toFixed(5) + "ms";
+				headerOutput = headerOutput + "<br>" + numWithMostFactors + " has " + maxFactors + " factors, which is the most";
 			  myMessage.innerHTML = headerOutput + "<br>" + output;
 	    break;
 	  case "surprised":

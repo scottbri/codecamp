@@ -6,6 +6,7 @@ var sadFace = document.getElementById("sad");
 var angryFace = document.getElementById("angry");
 var coolFace = document.getElementById("cool");
 var surprisedFace = document.getElementById("surprised");
+var mathFace = document.getElementById("math");
 
 var answer = getName();
 var output = greeting(answer);
@@ -21,6 +22,8 @@ coolFace.addEventListener('click', iAmFeeling, false);
 coolFace.emotion = "cool";
 surprisedFace.addEventListener('click', iAmFeeling, false);
 surprisedFace.emotion = "surprised";
+mathFace.addEventListener('click', iAmFeeling, false);
+mathFace.emotion = "math";
 
 function getName() {
 	var name = window.prompt("What's your name? ");
@@ -50,32 +53,6 @@ function greeting(name) {
 			message = name + ", hi." + name +  " I dont know you";
 	}
 	return(message);
-}
-
-function happyDo() {
-	var emotion = "happy";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function sadDo() {
-	var emotion = "sad";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function angryDo() {
-	var emotion = "angry";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function coolDo() {
-	var emotion = "cool";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
-function surprisedDo() {
-	var emotion = "surprised";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
 }
 
 function iAmFeeling(event) {
