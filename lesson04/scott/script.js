@@ -63,78 +63,78 @@ function iAmFeeling(event) {
 
 	switch(feeling) {
 		case "H":
-		message = "Why, oh, why did you click on the H??, " + answer;
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
-	    break;
+			message = "Why, oh, why did you click on the H??, " + answer;
+			output = output + "<br>" + message.bold();
+			myMessage.innerHTML = output;
+			break;
 	  case "happy":
-		message = "That's wonderful, " + answer;
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
+			message = "That's wonderful, " + answer;
+			output = output + "<br>" + message.bold();
+			myMessage.innerHTML = output;
 	    break;
 	  case "sad":
-		message = "Oh no, " + answer + ".";
-		message = message + "<br>" + "Here, have some ice cream!";
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
+			message = "Oh no, " + answer + ".";
+			message = message + "<br>" + "Here, have some ice cream!";
+			output = output + "<br>" + message.bold();
+			myMessage.innerHTML = output;
 	    break;
 	  case "angry":
-		message = "Eeek, " + answer;
-		message = message + "<br>" + "Everything will be ok.  Please forgive!";
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
+			message = "Eeek, " + answer;
+			message = message + "<br>" + "Everything will be ok.  Please forgive!";
+			output = output + "<br>" + message.bold();
+			myMessage.innerHTML = output;
 			break;
 		case "cool":
-				var phrase = window.prompt("What phrase do you want me to repeat? ");	
-				var number = window.prompt("How many times should I repeat that? ");	
-				output = "";
-				for (var i = 1; i <= number; i++) {
-					output = output + "<br>" + phrase + " #" + i;
-				}
+			var phrase = window.prompt("What phrase do you want me to repeat? ");	
+			var number = window.prompt("How many times should I repeat that? ");	
+			output = "";
+			for (var i = 1; i <= number; i++) {
+				output = output + "<br>" + phrase + " #" + i;
+			}
 			myMessage.innerHTML = output;
-	  break;
+			break;
 	  case "math":	
-				var number = window.prompt("What number do you want me to factor? ");	
-				var startTime = performance.now();
-				var stopTime;
-				var headerOutput = "";
-				var countFactors = 0;
-				var maxFactors = 0;
-				var numWithMostFactors = 0;
+			var number = window.prompt("What number do you want me to factor? ");	
+			var startTime = performance.now();
+			var stopTime;
+			var headerOutput = "";
+			var countFactors = 0;
+			var maxFactors = 0;
+			var numWithMostFactors = 0;
 
-				for (var i = 1; i <= number; i++) {
-					output = output + "<br>" + i + ":";
-					for (var j = 1 ; j<=i; j++ ) {
-						if (i%j == 0) {
-							countFactors++;
-							output = output + " " + j;
-						}
+			for (var i = 1; i <= number; i++) {
+				output = output + "<br>" + i + ":";
+				for (var j = 1 ; j<=i; j++ ) {
+					if (i%j == 0) {
+						countFactors++;
+						output = output + " " + j;
 					}
-					if ( countFactors <= 2 ) {
-						output = output + " (prime)";
-					} else {
-						if ( countFactors > maxFactors ) {
-							maxFactors = countFactors;
-							numWithMostFactors = i;
-						}
-						output = output + " (" + countFactors + ")";
-					}
-					countFactors = 0;
 				}
-				stopTime = performance.now();
-				headerOutput = "Factored through " + number + " in " + (stopTime - startTime).toFixed(5) + "ms";
-				headerOutput = headerOutput + "<br>" + numWithMostFactors + " has " + maxFactors + " factors, which is the most";
-			  myMessage.innerHTML = headerOutput + "<br>" + output;
-	    break;
+				if ( countFactors <= 2 ) {
+					output = output + " (prime)";
+				} else {
+					if ( countFactors > maxFactors ) {
+						maxFactors = countFactors;
+						numWithMostFactors = i;
+					}
+					output = output + " (" + countFactors + ")";
+				}
+				countFactors = 0;
+				}
+			stopTime = performance.now();
+			headerOutput = "Factored through " + number + " in " + (stopTime - startTime).toFixed(5) + "ms";
+			headerOutput = headerOutput + "<br>" + numWithMostFactors + " has " + maxFactors + " factors, which is the most";
+			myMessage.innerHTML = headerOutput + "<br>" + output;
+			break;
 	  case "surprised":
 			answer = getName();
 			output = greeting(answer);
 			myMessage.innerHTML = output;
-	    break;
+			 break;
 	  default:
-		message = "That's an interesting perspective.";
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
+			message = "That's an interesting perspective.";
+			output = output + "<br>" + message.bold();
+			myMessage.innerHTML = output;
   }
 }
 
