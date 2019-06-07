@@ -5,8 +5,7 @@ var happyFace = document.getElementById("happy");
 var sadFace = document.getElementById("sad");
 var angryFace = document.getElementById("angry");
 var coolFace = document.getElementById("cool");
-var surprisedFace = document.getElementById("surprised");
-var letterH = document.getElementById("H");
+//var surprisedFace = document.getElementById("surprised");
 
 var answer = getName();
 var output = greeting(answer);
@@ -16,8 +15,7 @@ happyFace.addEventListener('click', happyDo, false);
 sadFace.addEventListener('click', sadDo, false);
 angryFace.addEventListener('click', angryDo, false);
 coolFace.addEventListener('click', coolDo, false);
-surprisedFace.addEventListener('click', surprisedDo, false);
-letterH.addEventListener('click', hDo, false);
+//surprisedFace.addEventListener('click', surprisedDo, false);
 
 function getName() {
 	var name = window.prompt("What's your name? ");
@@ -48,11 +46,7 @@ function greeting(name) {
 	}
 	return(message);
 }
-function hDo() {
-	var emotion = "H";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
+
 function happyDo() {
 	var emotion = "happy";
 	console.log(answer + " is " + emotion);
@@ -63,30 +57,19 @@ function sadDo() {
 	console.log(answer + " is " + emotion);
 	iAmFeeling(emotion);
 }
-function angryDo() {
-	var emotion = "angry";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
 function coolDo() {
 	var emotion = "cool";
 	console.log(answer + " is " + emotion);
 	iAmFeeling(emotion);
 }
-function surprisedDo() {
-	var emotion = "surprised";
+function angryDo() {
+	var emotion = "angry";
 	console.log(answer + " is " + emotion);
 	iAmFeeling(emotion);
 }
-
 function iAmFeeling(feeling) {
 	var message = ""
 	switch(feeling) {
-		case "H":
-		message = "Why, oh, why did you click on the H??, " + answer;
-		output = output + "<br>" + message.bold();
-		myMessage.innerHTML = output;
-	    break;
 	  case "happy":
 		message = "That's wonderful, " + answer;
 		output = output + "<br>" + message.bold();
@@ -97,31 +80,23 @@ function iAmFeeling(feeling) {
 		message = message + "<br>" + "Here, have some ice cream!";
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
-	    break;
-	  case "angry":
-		message = "Eeek, " + answer;
-		message = message + "<br>" + "Everything will be ok.  Please forgive!";
+			break;
+		case "angry":
+		message = "Oh no, " + answer + ".";
+		message = message + "<br>" + "you are to mad, have a drink to cool off!";
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
-	    break;
-	  case "cool":
-				var phrase = window.prompt("What phrase do you want me to repeat? ");	
-				var number = window.prompt("How many times should I repeat that? ");	
-				output = "";
-				for (var i = 1; i <= number; i++) {
-					output = output + "<br>" + phrase + " #" + i;
-				}
-			myMessage.innerHTML = output;
-	    break;
-	  case "surprised":
-			answer = getName();
-			output = greeting(answer);
-			myMessage.innerHTML = output;
-	    break;
+			break;
+			case "cool":
+		message = "nice " + answer + ".";
+		message = message + "<br>" + "you are so cool even ice does not melt on you!";
+		output = output + "<br>" + message.bold();
+		myMessage.innerHTML = output;
+			break;
 	  default:
 		message = "That's an interesting perspective.";
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
-  }
+        }
 }
 

@@ -6,18 +6,21 @@ var sadFace = document.getElementById("sad");
 var angryFace = document.getElementById("angry");
 var coolFace = document.getElementById("cool");
 var surprisedFace = document.getElementById("surprised");
-var letterH = document.getElementById("H");
 
 var answer = getName();
 var output = greeting(answer);
 myMessage.innerHTML = output;
 
-happyFace.addEventListener('click', happyDo, false);
-sadFace.addEventListener('click', sadDo, false);
-angryFace.addEventListener('click', angryDo, false);
-coolFace.addEventListener('click', coolDo, false);
-surprisedFace.addEventListener('click', surprisedDo, false);
-letterH.addEventListener('click', hDo, false);
+happyFace.addEventListener('click', iAmFeeling, false);
+happyFace.emotion = "happy";
+sadFace.addEventListener('click', iAmFeeling, false);
+sadFace.emotion = "sad";
+angryFace.addEventListener('click', iAmFeeling, false);
+angryFace.emotion = "angry";
+coolFace.addEventListener('click', iAmFeeling, false);
+coolFace.emotion = "cool";
+surprisedFace.addEventListener('click', iAmFeeling, false);
+surprisedFace.emotion = "surprised";
 
 function getName() {
 	var name = window.prompt("What's your name? ");
@@ -48,11 +51,7 @@ function greeting(name) {
 	}
 	return(message);
 }
-function hDo() {
-	var emotion = "H";
-	console.log(answer + " is " + emotion);
-	iAmFeeling(emotion);
-}
+
 function happyDo() {
 	var emotion = "happy";
 	console.log(answer + " is " + emotion);
@@ -79,8 +78,12 @@ function surprisedDo() {
 	iAmFeeling(emotion);
 }
 
-function iAmFeeling(feeling) {
-	var message = ""
+function iAmFeeling(event) {
+	var message = "";
+	var feeling = event.currentTarget.emotion;
+
+	console.log(answer + " is " + feeling);
+
 	switch(feeling) {
 		case "H":
 		message = "Why, oh, why did you click on the H??, " + answer;
@@ -103,8 +106,8 @@ function iAmFeeling(feeling) {
 		message = message + "<br>" + "Everything will be ok.  Please forgive!";
 		output = output + "<br>" + message.bold();
 		myMessage.innerHTML = output;
-	    break;
-	  case "cool":
+			break;
+		case "cool":
 				var phrase = window.prompt("What phrase do you want me to repeat? ");	
 				var number = window.prompt("How many times should I repeat that? ");	
 				output = "";
@@ -112,7 +115,7 @@ function iAmFeeling(feeling) {
 					output = output + "<br>" + phrase + " #" + i;
 				}
 			myMessage.innerHTML = output;
-	    break;
+	  break;
 	  case "surprised":
 			answer = getName();
 			output = greeting(answer);
